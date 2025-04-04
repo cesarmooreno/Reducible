@@ -121,16 +121,15 @@ def find_word(s, hash_table):
     """
     length = len(hash_table)
     start_pos = hash_word(s,length)
-
     curr_pos= start_pos
 
     while hash_table[curr_pos] != "":
         if hash_table[curr_pos] == s:
             return True
-        else:
-            curr_pos=(curr_pos+step_size(s))%length
-            if curr_pos == start_pos:
-                return False
+        curr_pos=(curr_pos+step_size(s))%length
+        if curr_pos == start_pos:
+            break
+    return False
 
 
 
